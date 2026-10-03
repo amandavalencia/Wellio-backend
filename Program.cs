@@ -19,7 +19,7 @@ namespace Wellio
             // Add services to the container.
             builder.Services.AddDbContext<WellioDBContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration["ConnectionStrings"]);
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
             builder.Services.AddControllers();
             builder.Services.AddScoped<IActivityService, ActivityService>();
