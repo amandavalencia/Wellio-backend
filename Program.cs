@@ -38,7 +38,7 @@ namespace Wellio
             {
                 options.AddPolicy("FrontendDev", policy =>
                 {
-                    policy.WithOrigins("http://localhost:5173")
+                    policy.WithOrigins(builder.Configuration["Frontend_Domain"])
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials();
